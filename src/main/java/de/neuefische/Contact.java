@@ -1,16 +1,7 @@
 package de.neuefische;
 
 public abstract class Contact {
-
-    protected String name;
-
-    public Contact() {
-        super();
-    }
-
-    public Contact(String name) {
-        this.name = name;
-    }
+    private String name;
 
     public String getName() {
         return name;
