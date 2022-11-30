@@ -1,14 +1,22 @@
 package de.neuefische;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
-@Data
-@AllArgsConstructor
 public abstract class Contact {
-    public String contactName;
 
-    public String getName(){
-        return contactName;
+    protected String name;
+
+    public Contact() {
+        super();
+    }
+
+    public Contact(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

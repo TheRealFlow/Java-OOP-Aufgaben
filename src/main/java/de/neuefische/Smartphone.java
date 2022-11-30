@@ -3,62 +3,45 @@ package de.neuefische;
 import java.util.Arrays;
 
 public class Smartphone implements Radio, GPS{
-    private String modelName;
-    private String brandName;
-    private String[] allContacts;
+
+    private String model;
+    private String brand;
+    private Contact[] contacts;
 
 
-    @Override
-    public String startRadio() {
-        return "Radio started";
+    public Smartphone() {
+        super();
     }
 
-    @Override
-    public String stopRadio() {
-        return "Radio stopped";
+    public Smartphone(String model, String brand, Contact[] contacts) {
+        this.model = model;
+        this.brand = brand;
+        this.contacts = contacts;
     }
 
     @Override
     public String getPosition() {
-        return "Rostock";
+        return "Köln";
     }
 
-    public Smartphone(String modelName, String brandName, String[] allContacts) {
-        this.modelName = modelName;
-        this.brandName = brandName;
-        this.allContacts = allContacts;
+    @Override
+    public boolean startRadio() {
+        System.out.println("Radio started");
+        return true;
     }
 
-    public String getModelName() {
-        return modelName;
-    }
-
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
-    }
-
-    public String getBrandName() {
-        return brandName;
-    }
-
-    public void setBrandName(String brandName) {
-        this.brandName = brandName;
-    }
-
-    public String[] getAllContacts() {
-        return allContacts;
-    }
-
-    public void setAllContacts(String[] allContacts) {
-        this.allContacts = allContacts;
+    @Override
+    public boolean stopRadio() {
+        System.out.println("Radio stopped");
+        return false;
     }
 
     @Override
     public String toString() {
         return "Smartphone{" +
-                "modelName='" + modelName + '\'' +
-                ", brandName='" + brandName + '\'' +
-                ", allContacts=" + Arrays.toString(allContacts) +
+                "model='" + model + '\'' +
+                ", brand='" + brand + '\'' +
+                ", contacts=" + Arrays.toString(contacts) +
                 '}';
     }
 }
